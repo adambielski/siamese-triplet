@@ -60,7 +60,8 @@ While the embeddings look separable (which is what we trained them for), they do
 
 Now we'll train a siamese network that takes a pair of images and trains the embeddings so that the distance between them is minimized if they're from the same class and is greater than some margin value if they represent different classes.
 We'll minimize a contrastive loss function [1]:
-$$L_{contrastive}(x_0, x_1, y) = \frac{1}{2} y \lVert f(x_0)-f(x_1)\rVert_2^2 + \frac{1}{2}(1-y)\{max(0, m-\lVert f(x_0)-f(x_1)\rVert_2\}^2$$
+
+![](images/contrastive_loss.png)
 
 *SiameseMNIST* class samples random positive and negative pairs that are then fed to Siamese Network.
 
@@ -81,7 +82,7 @@ We'll train a triplet network, that takes an anchor, a positive (of same class a
 ![alt text](images/anchor_negative_positive.png "Source: FaceNet")
 Source: *Schroff, Florian, Dmitry Kalenichenko, and James Philbin. [Facenet: A unified embedding for face recognition and clustering.](https://arxiv.org/abs/1503.03832) CVPR 2015.*
 
-**Triplet loss**:   $L_{triplet}(x_a, x_p, x_n) = m +  \lVert f(x_a)-f(x_p)\rVert_2^2 - \lVert f(x_a)-f(x_n)\rVert_2^2$
+**Triplet loss**:   ![](images/triplet_loss.png)
 
 *TripletMNIST* class samples a positive and negative example for every possible anchor.
 
