@@ -34,7 +34,7 @@ Requires [pytorch](http://pytorch.org/) 0.3.1 with torchvision 0.2.0
   - *TripletSelector* - abstract class defining objects generating triplets based on embeddings and ground truth class labels. Can be used with *OnlineTripletLoss*.
     - *AllTripletSelector*, *HardestNegativeTripletSelector*, *RandomNegativeTripletSelector*, *SemihardNegativeTripletSelector* - TripletSelector implementations
 
-# Examples
+# Examples - MNIST
 
 We'll train embeddings on MNIST dataset. Experiments were run in [jupyter notebook](Experiments_MNIST.ipynb).
 
@@ -146,7 +146,8 @@ Here's what we got with random hard negatives for each positive pair.
 
 # FashionMNIST
 
-Similar experiments were conducted for FashionMNIST dataset where advantages of online negative mining are more visible. The exact same network architecture with only 2-dimensional embeddings was used, which is probably not complex enough for learning good embeddings.
+Similar experiments were conducted for FashionMNIST dataset where advantages of online negative mining are slightly more visible. The exact same network architecture with only 2-dimensional embeddings was used, which is probably not complex enough for learning good embeddings.
+More complex datasets with higher number classses should benefit even more from online mining.
 
 ## Baseline - classification
 
