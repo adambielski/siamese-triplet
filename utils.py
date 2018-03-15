@@ -47,11 +47,11 @@ class AllPositivePairSelector(PairSelector):
 
 class HardNegativePairSelector(PairSelector):
     """
-    Creates all possible positive pairs. For negative pairs, pairs with greatest distance are taken into consideration,
+    Creates all possible positive pairs. For negative pairs, pairs with smallest distance are taken into consideration,
     matching the number of positive pairs.
     """
 
-    def __init__(self, cpu=False):
+    def __init__(self, cpu=True):
         super(HardNegativePairSelector, self).__init__()
         self.cpu = cpu
 
@@ -68,7 +68,7 @@ class HardNegativePairSelector(PairSelector):
 
         negative_distances = distance_matrix[negative_pairs[:, 0], negative_pairs[:, 1]]
         negative_distances = negative_distances.cpu().data.numpy()
-        top_negatives = np.argpartition(negative_distances, -len(positive_pairs))[-len(positive_pairs):]
+        top_negatives = np.argpartition(negative_distances, len(positive_pairs))[:len(positive_pairs)]
         top_negative_pairs = negative_pairs[torch.LongTensor(top_negatives)]
 
         return positive_pairs, top_negative_pairs
