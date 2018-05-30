@@ -1,5 +1,4 @@
 import torch
-from torch.autograd import Variable
 import numpy as np
 
 
@@ -54,7 +53,7 @@ def train_epoch(train_loader, model, loss_fn, optimizer, cuda, log_interval, met
             data = tuple(d.cuda() for d in data)
             if target is not None:
                 target = target.cuda()
-        data = tuple(Variable(d) for d in data)
+
 
         optimizer.zero_grad()
         outputs = model(*data)
@@ -64,7 +63,6 @@ def train_epoch(train_loader, model, loss_fn, optimizer, cuda, log_interval, met
 
         loss_inputs = outputs
         if target is not None:
-            target = Variable(target)
             target = (target,)
             loss_inputs += target
 
@@ -106,7 +104,6 @@ def test_epoch(val_loader, model, loss_fn, cuda, metrics):
                 data = tuple(d.cuda() for d in data)
                 if target is not None:
                     target = target.cuda()
-            data = tuple(Variable(d) for d in data)
 
             outputs = model(*data)
 
@@ -114,7 +111,6 @@ def test_epoch(val_loader, model, loss_fn, cuda, metrics):
                 outputs = (outputs,)
             loss_inputs = outputs
             if target is not None:
-                target = Variable(target)
                 target = (target,)
                 loss_inputs += target
 
