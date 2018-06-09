@@ -157,21 +157,21 @@ More complex datasets with higher number classses should benefit even more from 
 
 Siamese network with randomly selected pairs
 
-![](images/fmnist_siamese_test.png)
+![](images/fmnist_comp_cl.png)
 
 Online contrastive loss with negative mining
 
-![](images/fmnist_ocl_test.png)
+![](images/fmnist_comp_ocl.png)
 
 ## Triplet vs online triplet loss with negative mining
 
 Triplet network with random triplets
 
-![](images/fmnist_triplet_test.png)
+![](images/fmnist_comp_tl.png)
 
 Online triplet loss with negative mining
 
-![](images/fmnist_otl_test.png)
+![](images/fmnist_comp_otl.png)
 
 # TODO
 
