@@ -8,6 +8,8 @@ Siamese and triplet networks are useful to learn mappings from image to a compac
 
 Requires [pytorch](http://pytorch.org/) 0.4 with torchvision 0.2.1
 
+For pytorch 0.3 compatibility checkout tag torch-0.3.1
+
 # Code structure
 
 - **datasets.py**
@@ -157,21 +159,21 @@ More complex datasets with higher number classses should benefit even more from 
 
 Siamese network with randomly selected pairs
 
-![](images/fmnist_siamese_test.png)
+![](images/fmnist_comp_cl.png)
 
 Online contrastive loss with negative mining
 
-![](images/fmnist_ocl_test.png)
+![](images/fmnist_comp_ocl.png)
 
 ## Triplet vs online triplet loss with negative mining
 
 Triplet network with random triplets
 
-![](images/fmnist_triplet_test.png)
+![](images/fmnist_comp_tl.png)
 
 Online triplet loss with negative mining
 
-![](images/fmnist_otl_test.png)
+![](images/fmnist_comp_otl.png)
 
 # TODO
 
