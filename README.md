@@ -15,7 +15,7 @@ For pytorch 0.3 compatibility checkout tag torch-0.3.1
 - **datasets.py**
   - *SiameseMNIST* class - wrapper for a MNIST-like dataset, returning random positive and negative pairs
   - *TripletMNIST* class - wrapper for a MNIST-like dataset, returning random triplets (anchor, positive and negative)
-  - *BalancedBatchSampler* class - BatchSampler for data loader, randomly chooses *n_classes* and *n_samples* from each class of a MNIST-like dataset
+  - *BalancedBatchSampler* class - BatchSampler for data loader, randomly chooses *n_classes* and *n_samples* from each class based on labels
 - **networks.py**
   - *EmbeddingNet* - base network for encoding images into embedding vector
   - *ClassificationNet* - wrapper for an embedding network, adds a fully connected layer and log softmax for classification
