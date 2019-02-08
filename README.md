@@ -148,7 +148,7 @@ Here's what we got with random hard negatives for each positive pair.
 
 # FashionMNIST
 
-Similar experiments were conducted for FashionMNIST dataset where advantages of online negative mining are slightly more visible. The exact same network architecture with only 2-dimensional embeddings was used, which is probably not complex enough for learning good embeddings.
+Similar experiments were conducted for [FashionMNIST](https://github.com/zalandoresearch/fashion-mnist) dataset where advantages of online negative mining are slightly more visible. The exact same network architecture with only 2-dimensional embeddings was used, which is probably not complex enough for learning good embeddings.
 More complex datasets with higher number classses should benefit even more from online mining.
 
 ## Baseline - classification
