@@ -83,7 +83,7 @@ class TripletSelector:
     def __init__(self):
         pass
 
-    def get_pairs(self, embeddings, labels):
+    def get_triplets(self, embeddings, labels):
         raise NotImplementedError
 
 
